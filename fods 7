@@ -1,0 +1,19 @@
+# dsa0402-fods
+import pandas as pd
+data = {
+    'customer_id': [101, 102, 103, 101, 104, 102, 103, 104, 105, 105],
+    'order_date': ['2023-01-15', '2023-02-05', '2023-01-20', '2023-03-10', '2023-02-18', '2023-03-01', '2023-01-25', '2023-02-28', '2023-03-15', '2023-01-30'],
+    'product_name': ['Widget A', 'Widget B', 'Widget A', 'Widget C', 'Widget B', 'Widget C', 'Widget A', 'Widget B', 'Widget C', 'Widget A'],
+            'order_quantity': [2, 3, 1, 2, 1, 4, 2, 2, 3, 1]
+    }
+order_data = pd.DataFrame(data)
+total_orders_per_customer = order_data['customer_id'].value_counts()
+average_quantity_per_product = order_data.groupby('product_name')['order_quantity'].mean()
+earliest_order_date = order_data['order_date'].min()
+latest_order_date = order_data['order_date'].max()
+print("Total Orders per Customer:")
+print(total_orders_per_customer)
+print("\nAverage Order Quantity per Product:")
+print(average_quantity_per_product)
+print("\nEarliest Order Date:", earliest_order_date)
+print("Latest Order Date:", latest_order_date)
