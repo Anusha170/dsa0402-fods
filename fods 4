@@ -1,0 +1,15 @@
+# dsa0402-fods
+import numpy as np
+sales_data = np.array([50000, 60000, 75000, 90000])
+
+total_sales_year = np.sum(sales_data)
+percentage_increase = ((sales_data[3] - sales_data[0]) / sales_data[0]) * 100
+
+print(f"Total Sales for the Year: ${total_sales_year}")
+print(f"Percentage Increase from Q1 to Q4: {percentage_increase:.2f}%")
+
+
+
+
+
+
