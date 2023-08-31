@@ -1,0 +1,23 @@
+# dsa0402-fods
+# Sample data
+item_prices = [10, 20, 30]  # Prices of items
+quantities = [2, 3, 1]       # Quantities of items
+discount_rate = 10           # Discount rate as a percentage
+tax_rate = 8                 # Tax rate as a percentage
+
+# Calculate total cost before discount
+total_cost_before_discount = sum(price * quantity for price, quantity in zip(item_prices, quantities))
+
+# Calculate discount amount
+discount_amount = (discount_rate / 100) * total_cost_before_discount
+
+# Calculate total cost after discount
+total_cost_after_discount = total_cost_before_discount - discount_amount
+
+# Calculate tax amount
+tax_amount = (tax_rate / 100) * total_cost_after_discount
+
+# Calculate final total cost
+final_total_cost = total_cost_after_discount + tax_amount
+
+print(f"Total Cost: ${final_total_cost:.2f}")
